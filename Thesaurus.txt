@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+string greet[6]={"acknowledge", "welcome", "address", "hail", "salute"};
+string relax[6]={"relax","calm", "recline", "unwind", "tranquilise","rest"};
+string eat[6]={"bite","chew","consume","feast","ingest", "nibble"};
+string soft[6]={"comfortable", "creamy", "delicate","fluffy", "mushy", "cozy"};
+string shiny[6]={"gleaming", "lustrous", "glossy", "polished", "sparkling", "bright"};
+cout <<"Pick a word for it's synonyms"<<endl;
+cout <<"Greet\nRelax\nEat\nSoft\nShiny\n"<<endl;
+string pick;
+cin >> pick;
+
+int arraySize = 6;
+int i;
+for(i=0; i < arraySize; i++){
+  if (pick == "greet"){
+    cout<<greet[i]<<endl;
+  }
+  else if (pick == "relax"){
+    cout <<relax[i]<<endl;
+  }
+  else if (pick == "eat"){
+    cout <<eat[i]<<endl;
+  }
+  else if (pick == "soft"){
+    cout <<soft[i]<<endl;
+  }
+  else if (pick == "shiny"){
+    cout <<shiny[i]<<endl;
+  }else{
+    cout<<"Error invalid choice"<<endl;
+    break;
+  }
+}
+
+}

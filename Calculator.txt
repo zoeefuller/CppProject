@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout<<"Enter your first number"<<endl;
+  int num1;
+  cin>>num1;
+  cout<<"What calculation would you like to perform?"<<endl;
+  cout<<"+ addition\n- subtraction\n* multiplication\n/ division"<<endl;
+  string calc;
+  cin >> calc;
+  cout << "Enter your second number"<<endl;
+  int num2;
+  cin >> num2;
+  
+int sum;
+  if (calc == "+"){
+    sum = num1 + num2;
+  }else if (calc == "-"){
+    sum = num1 - num2;
+  }else if(calc == "*"){
+    sum = num1 * num2;
+  }else if (calc == "/"){
+    sum = num1 / num2;
+  }else{
+    cout << "Error please enter one of the above operators"<< endl;
+  }
+
+  cout <<"The answer is "<<sum<<endl;
+}

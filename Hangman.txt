@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+#include <string>
+
+int main() {
+  string word[]={"string","boolean","double","algorithm", "loop","statement","array","computer","agile","integer", "execute","input","console","operator","stack", "output", "function", "variable", "object", "class"};
+
+  int max;
+  max = 20;
+  srand(time(0));
+  int ranNum = rand()%max;
+  
+  string compWord = word[ranNum];
+
+  string blank (compWord.length(),'*');
+
+  int maxGuess = 20;
+  int guess=0;
+  cout<<"Lets play hangman! You have "<<maxGuess<<" guesses to guess the word below:"<<endl;
+  cout<<blank<<endl;
+
+  while(guess<maxGuess){
+    cout<<"Take a guess"<<endl;
+    char letter;
+    cin>>letter;
+    guess ++;
+    bool charFound = false;
+    int i;
+    for(i=0; i<compWord.length();i++){
+      if (compWord[i]==letter){
+        blank[i]=letter;
+        charFound = true; 
+        cout<<blank<<endl;
+      }
+    }
+  if (charFound == false){
+    cout<<"Letter not in word"<<endl;
+    cout<<blank<<endl;
+  }
+  if(blank == compWord){
+      cout<<"You guessed it!"<<endl;
+      break;
+    }
+  if (guess == maxGuess){
+    cout<<"Sorry you ran out of guesses! The word was "<<compWord<<endl;
+  }
+  }
+}

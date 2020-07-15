@@ -1,0 +1,70 @@
+#include <iostream>
+#include <sstream>
+using namespace std;
+#include <string>
+#include<bits/stdc++.h>
+
+void leapYear();
+void again();
+//declare functions to be used in main
+
+int main() {
+leapYear();
+// call leapyear function
+}
+void leapYear(){
+  cout << "Please input the year"<< endl;
+  // asks user for year
+  string yearStr;
+  // declare string variable yearStr
+  getline (cin, yearStr);
+  // get user input and assign to yearStr
+  stringstream convert(yearStr);
+  int year = 0;
+  convert >> year;
+  cout << year << endl;
+  // converts string input to int to be used in mathematical conditions
+
+  if (year > 1752) {
+    if (year%400 == 0){
+      cout << "It's a leap year!" << endl;
+      // if inputted year is divisable by 400 output its a leap year
+    }
+    else if (year%4 == 0){
+      // if its divisable by 4 
+      if (year%100 == 0){
+        cout << "It's not a leap year!"<< endl;
+        // and divisable by 100 print its not a leap year
+      }else{
+        cout << "It's a leap year!" << endl;
+        // if only divisable by 4 print its a leap year
+      }
+    }else{
+      cout << "It's not a leap year!" << endl;
+      // if its not divisable by 4 print its not a leap year
+    }
+  }else{
+        cout << "It's not a leap year!" << endl;
+        // if none of the above statements apply print its not a leap year
+  }
+  cin.clear();
+  // clears the variable for new input from user 
+  again();
+  // calls the again function
+}
+
+void again(){
+  cout<<"Would you like to try again?"<<endl;
+  // asks user if they would like to go again
+  string answer;
+  // declare string variable answer
+   getline (cin, answer);
+   // get users answer
+  if (answer == "yes"){
+    leapYear();
+    // if answer is yes call leapYear function
+  }else{ 
+    cout<<"Okay have a nice day! :)"<<endl;
+    // if answer is anything else print have a nice day and end 
+  }
+}
